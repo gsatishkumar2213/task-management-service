@@ -1,7 +1,6 @@
 package org.task.management.controller;
 
 import org.springframework.web.bind.annotation.*;
-import org.task.management.TaskStatus;
 import org.task.management.dto.TaskRequest;
 import org.task.management.dto.TaskResponse;
 import org.task.management.service.TaskService;
@@ -40,7 +39,7 @@ public class TaskController {
 
     @GetMapping("/user/{userId}/status/{status}")
     public Flux<TaskResponse> findByUserIdAndStatus(@PathVariable String userId,
-                                                    @PathVariable TaskStatus status) {
+                                                    @PathVariable String status) {
         return taskService
                 .getTasksByUserIdAndStatus(userId, status);
     }

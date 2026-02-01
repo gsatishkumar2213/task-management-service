@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
-import org.task.management.TaskStatus;
 
 import java.time.LocalDateTime;
 
@@ -20,9 +19,12 @@ public class Task {
     Long taskId;
     @Column("user_id")
     String userId;
+    @Column("title")
     String title;
+    @Column("description")
     String description;
-    TaskStatus status;
+    @Column("status")
+    String status;
     @Column("created_at")
     LocalDateTime createdAt;
     @Column("updated_at")
